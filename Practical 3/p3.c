@@ -91,3 +91,41 @@ int main()
     return 0;
 }
 
+
+#include <stdio.h>
+
+void InsertionSort(int a[], int n)
+{
+    int i, j, key;
+    for(i=0;n;i++)
+    {
+        key=a[i];
+        j=i-1;
+        while(j>=0 && a[j]>key)
+        a[j + 1] = a[j];
+        j--;
+    }
+    a[j + 1]=key;
+}
+
+int main()
+{
+    int a[10],n,i;
+
+    printf("Enter no. of elements: ");
+    scanf("%d",&n);
+
+    printf("Enter elements: ");
+
+    for(i=0; i<n;i++)
+        scanf("%d",&a[i]);
+
+    InsertionSort(a,n);
+
+    printf("Sorted Array: ");
+
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+
+    return 0;
+}
